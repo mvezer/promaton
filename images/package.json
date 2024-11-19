@@ -1,0 +1,64 @@
+{
+  "name": "@promaton/images-case",
+  "version": "1.0.0",
+  "description": "A service that shows images for assignment",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@types/express": "^4.17.9",
+    "@types/fs-extra": "^9.0.4",
+    "@types/node": "^14.14.7",
+    "concurrently": "^5.3.0",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.1.2",
+    "prettier-check": "^2.0.0",
+    "pretty-quick": "^3.1.0",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5"
+  },
+  "scripts": {
+    "format:check": "prettier-check '{src/**/,}*.{js,jsx,json,css,ts,tsx,md}'",
+    "format": "prettier --write '**/*.{js,jsx,json,css,ts,tsx,md}'",
+    "build": "tsc -p .",
+    "serve": "node ./.build/index.js",
+    "watch-node": "nodemon --watch .build .build/index.js",
+    "watch-ts": "tsc -w -p .",
+    "start": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"magenta.bold,green.bold\" \"yarn watch-ts\" \"yarn watch-node\"",
+    "watch:debug": "nodemon --watch --inspect ./.build/index.js",
+    "start:debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"magenta.bold,green.bold\" \"yarn watch-ts\" \"yarn serve-debug\"",
+    "test": "jest --maxWorkers=50%"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "proseWrap": "always",
+    "overrides": [
+      {
+        "files": "*.css",
+        "options": {
+          "useTabs": false,
+          "tabWidth": 2
+        }
+      }
+    ]
+  },
+  "dependencies": {
+    "aws-sdk": "^2.793.0",
+    "axios": "^0.21.0",
+    "express": "^4.17.1",
+    "fs-extra": "^9.0.1",
+    "googleapis": "^65.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "open": "^7.3.0"
+  }
+}

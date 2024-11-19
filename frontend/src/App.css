@@ -1,0 +1,39 @@
+main {
+  text-align: center;
+  vertical-align: center;
+  line-height: 100vh;
+}
+
+code {
+  color: cornflowerblue;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 10% 20% 10% 20%;
+}
+
+.AssignmentPicker {
+  max-height: 350pt;
+  overflow: "scroll";
+  border-top-style: dashed;
+  border-top-width: 1pt;
+  border-bottom-style: "dashed";
+  border-bottom-width: 1pt;
+}
+
+.AssignmentDisplay {
+  border-color: lightgray;
+  border-style: dotted;
+  border-width: 1pt;
+}
+
+.error {
+  border-left-style: dashed;
+  border-left-color: pink;
+  border-left-width: 3pt;
+  font-style: italic;
+  background-color: pink;
+  opacity: 0.4;
+}

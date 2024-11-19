@@ -1,0 +1,17 @@
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+
+# Matches multiple files with brace expansion notation
+# Set default charset
+[*.{md,markdown}]
+charset = utf-8
+max_line_length=100
+
+[*.{js,ts,tsx,jsx}]
+indent_style = tab

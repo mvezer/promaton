@@ -1,0 +1,11 @@
+version: "3"
+services:
+  db:
+    image: postgres:10.12
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: develop
+      POSTGRES_PASSWORD: develop_secret
+      POSTGRES_DB: develop

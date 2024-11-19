@@ -1,0 +1,6 @@
+frontend/node_modules
+images/node_modules
+lobby/.build
+lobby/node_modules
+frontend/build
+images/.build
